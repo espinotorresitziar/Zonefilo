@@ -1,0 +1,64 @@
+
+.nav2 {
+    background-color: rgb(45, 88, 61);
+    width: auto;
+  }
+  #menu ul li {
+    background-color: rgb(45, 88, 61);
+    width: 16%;
+  }
+  
+  #menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 5;
+  }
+  
+  #menu ul a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px;
+    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  #menu ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  #menu ul li:hover {
+    background: rgb(45, 88, 61);
+    z-index: 10;
+  }
+  
+  #menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+  }
+  
+  #menu ul ul li {
+    float: none;
+    width: 150px;
+  }
+  
+  #menu ul ul a {
+    line-height: 120%;
+    padding: 10px 15px;
+  }
+  
+  #menu ul li:hover > ul {
+    display: block;
+    z-index: 10;
+  }
+  
