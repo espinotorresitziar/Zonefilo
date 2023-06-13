@@ -1,6 +1,12 @@
-<h1>Cartelera</h1>
+<h2>Cartelera</h2>
+<hr>
 <div class="row" *ngIf="pelicula.length > 0">
     <div class="col">
         <app-slide-show [peliculas]="peliculaSlideShow"></app-slide-show>
     </div>
 </div>
+
+
+<h2 class="mt-5">Estrenos</h2>
+<hr>
+<app-estrenos *ngIf="pelicula.length > 0" [peliculas]="pelicula"></app-estrenos>

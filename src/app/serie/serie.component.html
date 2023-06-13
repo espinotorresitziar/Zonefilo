@@ -1,0 +1,48 @@
+<div class="row" *ngIf="serie">
+    <div class="col-md-6">
+        <img [src]="serie.poster_path | image" [alt]="serie.name">
+    </div>
+    <div class="col-md-6 mt-2">
+        <h3>{{serie.name}}</h3>
+        <hr>
+        <div class="row">
+            <div class="col-6 text-white">
+                Valoración: <strong> {{serie.vote_average | number: "1.1-2"}} </strong>
+            </div>
+            <div>
+                <ngb-rating style="color:yellow"
+                            [rate]="serie.vote_average"
+                ></ngb-rating>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <h3>Temporadas:</h3>
+            <div class="col text-white text-justify-content">
+                {{serie.number_of_seasons}}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <h3>Episodios:</h3>
+            <div class="col text-white text-justify-content">
+                {{serie.number_of_episodes}}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <h3>Sinopsis:</h3>
+            <div class="col text-white text-justify-content">
+                {{serie.overview}}
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-outline-light" (click)="atras()"><i class="fas fa-arrow-left"></i> Volver </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-5 mb-3" *ngIf="cast.length > 0">
+
+    <div class="col">
+        <app-cast [cast]="cast"></app-cast>
+    </div>
+</div>

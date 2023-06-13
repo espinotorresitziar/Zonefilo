@@ -1,100 +1,4 @@
-/* Add application styles & imports to this file! */
-/* Global Styles */
-/*
-* {
-    background-color: rgb(202, 166, 133);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  */
-/*
-  @import '~ngx-toastr/toastr';
-
-h1 {
-    color: rgb(250, 47, 47);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-    text-align: center;
-  }
-  h2,
-  h3 {
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  body {
-    margin: 2em;
-    background-repeat: repeat;
-    background-size: cover;
-    height: 100vh;
-  }
-  body,
-  input[text],
-  button {
-    color: rgb(255, 255, 255);
-    font-family: Cambria, Georgia;
-  }
-  a {
-    cursor: pointer;
-    cursor: hand;
-  }
-  button {
-    font-family: Arial;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-  }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: #eee;
-    color: #aaa;
-    cursor: auto;
-  }
-  */
-  /* Navigation link styles 
-  
-  nav a {
-    padding: 5px 10px;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-top: 10px;
-    display: inline-block;
-    background-color: #eee;
-    border-radius: 4px;
-  }
-  nav a:visited,
-  a:link {
-    color: #607d8b;
-  }
-  nav a:hover {
-    color: #039be5;
-    background-color: #cfd8dc;
-  }
-  nav a.active {
-    color: #039be5;
-  }
-  
-  /*label {
-    display: inline-block;
-    background: gray;
-    margin: 25px;
-    position: relative;
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 2px;
-    font-size: 1em;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  }*/
-
-  @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 * {
@@ -109,8 +13,20 @@ h1 {
 }
 
 body {
-  font-family: var(--font-roboto);
-  background-color: #212426;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(145, 145, 145, 0.779) 100%, rgba(0,212,255,1) 100%);
+}
+
+h2,h3,h4,h5{
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+hr{
+  color: white;
 }
 
 .app {
@@ -123,12 +39,12 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 100%
+    rgb(146, 216, 156) 0%,
+    rgba(95, 95, 95, 0.492) 125%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -137,18 +53,18 @@ h1 {
 }
 
 .search {
-  width: 71%;
-  margin: 4rem 0 2rem;
+  width: 60%;
+  margin: 2rem 0 1rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 1.5rem 1.75rem;
-  border-radius: 3rem;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  background: #dfe2e4;
+  -webkit-box-shadow: 5px 5px 7px #c1c3c7, -5px -5px 7px #babfc3;
+  box-shadow: 5px 5px 7px #c1c3c7, -5px -5px 7px #babfc3;
 }
 
 .search input {
@@ -161,16 +77,16 @@ h1 {
 
   outline: none;
   color: #a1a1a1;
-  background: #1f2123;
+  background: #dfe2e4;
 }
 
 .search img {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 }
 
-.search button {
+/* .search button {
   padding: 20px 40px;
   border-radius: 0.5rem;
   margin-left: 15px;
@@ -183,7 +99,7 @@ h1 {
   background: #1f2123;
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} 
+} */
 
 .empty {
   width: 100%;
@@ -196,7 +112,7 @@ h1 {
 
 .empty h2 {
   font-size: 1.25rem;
-  color: #f9d3b4;
+  color: rgb(146, 216, 156);
   font-family: var(--font-raleway);
 }
 
@@ -230,7 +146,7 @@ h1 {
   width: 100%;
   opacity: 0;
   top: 0;
-  color: #f9d3b4;
+  color: rgb(146, 216, 156);
 }
 
 .movie:hover {
@@ -271,7 +187,7 @@ h1 {
 .movie div:nth-of-type(3) h3 {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
-  color: #f9d3b4;
+  color: rgb(146, 216, 156);
 }
 
 .movie:hover div:nth-of-type(2) {

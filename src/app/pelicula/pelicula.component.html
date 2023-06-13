@@ -1,0 +1,37 @@
+<div class="row" *ngIf="pelicula">
+    <div class="col-md-6">
+        <img [src]="pelicula.poster_path | image" [alt]="pelicula.title">
+    </div>
+    <div class="col-md-6 mt-2">
+        <h3>{{pelicula.title}}</h3>
+        <hr>
+        <div class="row">
+            <div class="col-6 text-white">
+                Valoración: <strong> {{pelicula.vote_average | number: "1.1-2"}} </strong>
+            </div>
+            <div>
+                <ngb-rating style="color:yellow"
+                            [rate]="pelicula.vote_average"
+                ></ngb-rating>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <h3>Sinopsis:</h3>
+            <div class="col text-white text-justify-content">
+                {{pelicula.overview}}
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-outline-light" (click)="atras()"><i class="fas fa-arrow-left"></i> Volver </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-5 mb-3" *ngIf="cast.length > 0">
+
+    <div class="col">
+        <app-cast [cast]="cast"></app-cast>
+    </div>
+</div>

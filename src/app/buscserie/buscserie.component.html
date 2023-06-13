@@ -1,0 +1,12 @@
+<h2 class="text-capitalsize">Buscar Series <small>{{texto}}</small></h2>
+<hr>
+
+<div class="text-center mt-5" *ngIf="noExiste">
+    <h2>No hay resultados</h2>
+</div>
+
+<div class="row" *ngIf="!noExiste">
+    <div class="col">
+        <app-series [serie]="serie"></app-series>
+    </div>
+</div>

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PeliculaService } from '../services/pelicula.service';
+import { Pelicula } from '../interfaces/peliculas';
+import { Tendencia } from '../interfaces/tendencias';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-peliculas',
@@ -8,9 +11,25 @@ import { PeliculaService } from '../services/pelicula.service';
 })
 export class PeliculasComponent implements OnInit {
 
-  constructor(private peliculaService: PeliculaService) { }
+  @Input() pelicula?:Tendencia[];
+
+  tendencia: Tendencia[]=[];
+
+  constructor(private peliculaService: PeliculaService, private router: Router) { }
 
   ngOnInit(): void {
+    this.peliculaService.getTodas().subscribe(tendencias=>{
+      this.tendencia = tendencias
+      console.log(tendencias)
+    })
+  }
+
+  onMovieClick(tendencia:Tendencia){
+
+
+    this.router.navigate(["/pelicula", tendencia.id])
+    
+
   }
 
   /*getPeliculas(search: string) {
