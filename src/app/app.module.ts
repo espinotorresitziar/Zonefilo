@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { YouTubePlayerModule } from '@angular/youtube-player'
 
 
 //Modulos
@@ -23,6 +24,7 @@ import { PeliculaComponent } from './pelicula/pelicula.component';
 import { SerieComponent } from './serie/serie.component';
 import { BuscserieComponent } from './buscserie/buscserie.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
     declarations: [
         AppComponent,
@@ -46,7 +48,9 @@ import { LoginComponent } from './login/login.component';
         SharedModule,
         NgbModule,
         PipesModule,
-        NgbRatingModule
+        NgbRatingModule,
+        BrowserAnimationsModule,
+        YouTubePlayerModule
     ],
     providers: [],
     bootstrap: [AppComponent]

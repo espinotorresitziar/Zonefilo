@@ -39,17 +39,36 @@ hr{
 }
 
 h1 {
+  width: 60%;
   font-size: 4rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
     rgb(146, 216, 156) 0%,
-    rgba(95, 95, 95, 0.492) 125%
+    rgba(63, 59, 59, 0.492) 125%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
+}
+.user {
+  width: 100%;
+  background: #dfe2e4;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  
+}
+.user ul a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 10px;
+    padding: 7px;
+    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .search {
@@ -241,3 +260,5 @@ h1 {
     margin: 1rem;
   }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
