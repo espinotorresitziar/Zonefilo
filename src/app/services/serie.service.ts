@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Result, SerieDetails, Series, TopLevel} from '../interfaces/series';
 import { Cast, Credits } from '../interfaces/cast';
+import { Video, Resulta } from '../interfaces/trailer';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,15 @@ export class SerieService {
       params
     }).pipe(
       map(res=> res.results)
+    )
+  }
+
+  getTrailer(id: string): Observable<Resulta[]> {
+    return this.http.get<Video>(`${this.API_URL}/tv/${id}/video`, {
+      params: this.params 
+    }).pipe(
+      map(res=> res.results),
+      catchError(err=> of([]))
     )
   }
 

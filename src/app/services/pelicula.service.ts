@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable, map, tap, of, catchError } from 'rxjs';
 import { Pelicula, PeliculasResponse } from '../interfaces/peliculas';
-import { PeliculaDetails } from '../interfaces/pelicula';
+import { PeliculaDetails, } from '../interfaces/pelicula';
 import { Cast, Credits } from '../interfaces/cast';
 import { Tendencia, TopLevel } from '../interfaces/tendencias';
+import { Resulta, Video } from '../interfaces/trailer';
 
 @Injectable({
   providedIn: 'root'
@@ -91,6 +92,15 @@ export class PeliculaService {
         this.peliculaPage+=1
         this.cargando=false
       })
+    )
+  }
+
+  getTrailer(id: string): Observable<Resulta[]> {
+    return this.http.get<Video>(`${this.API_URL}/movie/${id}/video`, {
+      params: this.params 
+    }).pipe(
+      map(res=> res.results),
+      catchError(err=> of([]))
     )
   }
 

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculaService } from '../services/pelicula.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeliculaDetails } from '../interfaces/pelicula';
+import { PeliculaDetails, Result, Video } from '../interfaces/pelicula';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Cast } from '../interfaces/cast';
 import { Location } from '@angular/common';
+import { Resulta } from '../interfaces/trailer';
 
 @Component({
   selector: 'app-pelicula',
@@ -15,6 +16,7 @@ export class PeliculaComponent implements OnInit{
 
   pelicula?: PeliculaDetails
   cast: Cast[] = []
+  key: Resulta[] = []
 
   constructor(private peliculaService: PeliculaService, private activatedRoute: ActivatedRoute, private router: Router, 
     private config: NgbRatingConfig, private location: Location) {
@@ -44,9 +46,9 @@ export class PeliculaComponent implements OnInit{
 
     })
 
-    const tag = document.createElement('script')
-    tag.src= "https://www.youtube.com/iframe_api"
-    document.body.appendChild(tag)
+    this.peliculaService.getTrailer(id).subscribe(key=>{
+      this.key=key
+    })
 
   }
 

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Location } from '@angular/common';
 import { Cast } from '../interfaces/cast';
+import { Resulta } from '../interfaces/trailer';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { Cast } from '../interfaces/cast';
 export class SerieComponent implements OnInit{
   serie?: SerieDetails
   cast: Cast[] = []
+  key: Resulta[] = []
 
   constructor(private serieService: SerieService, private activatedRoute: ActivatedRoute, private router: Router, 
     private config: NgbRatingConfig, private location: Location) {
@@ -42,6 +44,10 @@ export class SerieComponent implements OnInit{
       this.cast= cast
       //console.log(this.cast)
 
+    })
+
+    this.serieService.getTrailer(id).subscribe(key=>{
+      this.key=key
     })
 
   }

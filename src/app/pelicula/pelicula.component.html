@@ -22,11 +22,10 @@
                 {{pelicula.overview}}
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-5">
             <h3>Trailer:</h3>
-            <div class="col text-white text-justify-content">
-                <youtube-player videoId="iframe_api"></youtube-player>
-                {{pelicula.overview}}
+            <div class="col">
+                <app-trailer [trailer]="key"></app-trailer>
             </div>
         </div>
         <div class="row mt-5">

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { YouTubePlayerModule } from '@angular/youtube-player'
+
 
 
 //Modulos
@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { YouTubePlayerModule } from '@angular/youtube-player'
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -23,8 +24,9 @@ import { PipesModule } from './pipes/pipes.module';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { SerieComponent } from './serie/serie.component';
 import { BuscserieComponent } from './buscserie/buscserie.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrailerComponent } from './trailer/trailer.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -36,7 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PeliculaComponent,
         SerieComponent,
         BuscserieComponent,
-        LoginComponent
+        TrailerComponent,
     ],
     imports: [
         BrowserModule,
